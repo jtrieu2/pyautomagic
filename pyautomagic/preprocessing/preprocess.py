@@ -126,6 +126,7 @@ class Preprocess:
         montage = mne.channels.make_standard_montage(
             self.params["interpolation_params"]["montage"]
         )
+        montage.ch_names = ['E37', 'E44', 'E86', 'E39', 'E87', 'E93', 'E60', 'E77', 'E61', 'E72', 'E75', 'E50', 'E112', 'E34', 'E2', 'E51', 'E98', 'E4', 'E42', 'E101', 'E36', 'E17', 'E88', 'E7', 'E25', 'E5', 'E18', 'E84', 'E21', 'E49', 'E103', 'E97', 'E122', 'E71', 'E53', 'E54', 'E32', 'E67', 'E38', 'E22', 'E114', 'E92', 'E108', 'E121', 'E3', 'E14', 'E13', 'E64', 'E90', 'E20', 'E27', 'E107', 'E100', 'E119', 'E47', 'E110', 'E83', 'E40', 'E117', 'E48', 'E15', 'E30', 'E26', 'E55', 'E69', 'E79', 'E125', 'E76', 'E128', 'E41', 'E43', 'E74', 'E24', 'E45', 'E9', 'E73', 'E102', 'E29', 'E65', 'E63', 'E12', 'E82', 'E127', 'E56', 'E52', 'E91', 'E80', 'E95', 'E124', 'E58', 'E31', 'E106', 'E46', 'E78', 'E6', 'E115', 'E126', 'E89', 'E96', 'E123', 'E8', 'E66', 'E104', 'E10', 'E11', 'E118', 'E57', 'E120', 'E99', 'E116', 'E16', 'E94', 'E111', 'E105', 'E19', 'E35', 'E109', 'E1', 'E33', 'E68', 'E28', 'E59', 'E70', 'E113', 'E81', 'E23', 'E85', 'E62']
         prep = PrepPipeline(self.eeg, self.params["interpolation_params"], montage)
         prep = prep.fit()
         self.bad_chs = list(
